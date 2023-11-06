@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from scipy import stats
 import numpy as np
+from statsmodels.graphics.mosaicplot import mosaic
 
 def main():
 
@@ -27,7 +28,7 @@ def main():
     # Valor seleccionable del menú para cargar archivo tipo CSV o Excel
     if menu == "1. Cargar Archivo":
 
-        st.title('Carga tu dataset: csv o excel')
+        st.title('Carga tu dataset: csv o Excel 👇')
 
         carga_archivo=st.file_uploader("Cargar un archivo CSV o Excel", type=["csv","xlsx"]) # Comando para cargar el archivo
 
@@ -173,16 +174,22 @@ def main():
 
         # Graficas Combinadas
         st.subheader('Graficas de variables combinadas')
+        
+        # Se definen las combinaciones de variables a graficar
         tipos_var = ["Categóricas", "Contínuas", "Discretas","Temporales"]
         tipos_var_2 = ['Categóricas', 'Contínuas']
+        tipos_var_3 = ['Contínuas', 'Discretas']
+        
+        # Se selecciona la variable independiente
         var_seleccion_x = st.selectbox("Seleccione el tipo de variable a visualizar en X", tipos_var)
+
+        #Se elaboran las selecciones según combinación
         if var_seleccion_x == "Categóricas":
             var_seleccion_y = st.selectbox("Seleccione el tipo de variable a visualizar en Y", tipos_var_2)
-        
-        #elif :
+        elif (var_seleccion_x == "Contínuas") or (var_seleccion_x == "Discretas") or (var_seleccion_x == "Temporales"):
+            var_seleccion_y = st.selectbox("Seleccione el tipo de variable a visualizar en Y", tipos_var_3)
         
         if (var_seleccion_x == "Categóricas"):
-            st.write("Seleccione la variable categórica y la variable contínua a evaluar")
             var_x = st.selectbox("Seleccione la variable independiente X:", categoricas)
 
             if var_seleccion_y =="Contínuas": 
@@ -192,28 +199,23 @@ def main():
                 plot_cont.set_ylabel(var_y)
                 plot_cont.set_title(f"Gráfico de distribución {var_x} vs {var_y}")
                 st.pyplot(plot_cont.figure, clear_figure=True)
-                
-                if var_x == var_y:
-                    valor_correlacion = 1
-                else:
-                    # Calcular la correlación entre las variables seleccionadas
-                    correlacion = dataset[[var_x, var_y]].corr()
-                    valor_correlacion = round(correlacion.loc[var_x, var_y],5)
-
-                # Mostrar la correlación en Streamlit
-                st.write(f"Correlación entre las variables seleccionadas: {valor_correlacion}")
             
             if var_seleccion_y =="Categóricas": 
                 var_y = st.selectbox("Seleccione la variable independiente Y:", categoricas)
                 fig, ax = plt.subplots()
                 #Se crea la tabla de contingencia
                 cuentas = pd.crosstab(dataset[var_x],dataset[var_y])
-
                 cuentas.plot(kind='bar', stacked=True, ax=ax, width =1)
                 ax.set_xlabel('Variables')
                 ax.set_ylabel('Frecuencia')
                 ax.set_title('Gráfico de Mosaico')
                 st.pyplot(plt, clear_figure=True)
+
+                # Gráfico de mosaico
+                st.set_option('deprecation.showPyplotGlobalUse', False)
+                mosaic(cuentas.stack())
+
+                st.pyplot( clear_figure=True)
 
                 #Se calcula el coeficiente de contingencia de Cramer
                 chi2, p, _, _ = stats.chi2_contingency(cuentas)
@@ -223,69 +225,125 @@ def main():
 
                 #Se expone el coeficiente:
                 st.write(f'El coeficiente de contingencia de Cramer es: {cramer_v}')
-
-
         
         elif var_seleccion_x == "Contínuas":
             var_x_cont = st.selectbox("Seleccione la variable independiente X:", continuas)
-            var_y_cont = st.selectbox("Seleccione la variable independiente Y:", continuas)
-            plot_cont=sns.scatterplot(data=dataset, x=dataset[var_x_cont], y=dataset[var_y_cont])
-            plot_cont.set_xlabel(var_x_cont)
-            plot_cont.set_ylabel(var_y_cont)
-            plot_cont.set_title(f"Gráfico de dispersión {var_x_cont} vs {var_y_cont}")
-            st.pyplot(plot_cont.figure, clear_figure=True)
+# Opción variable Y contínuas
+            if var_seleccion_y == "Contínuas":
+                var_y_cont = st.selectbox("Seleccione la variable independiente Y:", continuas)
+                plot_cont=sns.scatterplot(data=dataset, x=dataset[var_x_cont], y=dataset[var_y_cont])
+                plot_cont.set_xlabel(var_x_cont)
+                plot_cont.set_ylabel(var_y_cont)
+                plot_cont.set_title(f"Gráfico de dispersión {var_x_cont} vs {var_y_cont}")
+                st.pyplot(plot_cont.figure, clear_figure=True)
 
-            if var_x_cont == var_y_cont:
-                valor_correlacion = 1
-            else:
                 # Calcular la correlación entre las variables seleccionadas
-                correlacion = dataset[[var_x_cont, var_y_cont]].corr()
-                valor_correlacion = round(correlacion.loc[var_x_cont, var_y_cont],5)
+                if var_x_cont == var_y_cont:
+                    valor_correlacion = 1
+                else:
+                    correlacion = dataset[[var_x_cont, var_y_cont]].corr()
+                    valor_correlacion = round(correlacion.loc[var_x_cont, var_y_cont],5)
 
-            # Mostrar la correlación en Streamlit
-            st.write(f"Correlación entre las variables seleccionadas: {valor_correlacion}")
+                # Mostrar la correlación en Streamlit
+                st.write(f"Correlación entre las variables seleccionadas: {valor_correlacion}")
+
+            elif var_seleccion_y == "Discretas":
+                var_y_disc = st.selectbox("Seleccione la variable independiente Y:", discretas)
+                plot_disc=sns.scatterplot(data=dataset, x=dataset[var_x_cont], y=dataset[var_y_disc])
+                plot_disc.set_xlabel(var_x_cont)
+                plot_disc.set_ylabel(var_y_disc)
+                plot_disc.set_title(f"Gráfico de dispersión {var_x_cont} vs {var_y_disc}")
+                st.pyplot(plot_disc.figure, clear_figure=True)
+
+                # Calcular la correlación entre las variables seleccionadas
+                if var_x_cont == var_y_disc:
+                    valor_correlacion = 1
+                else:
+                    correlacion = dataset[[var_x_cont, var_y_disc]].corr()
+                    valor_correlacion = round(correlacion.loc[var_x_cont, var_y_disc],5)
+
+                # Mostrar la correlación en Streamlit
+                st.write(f"Correlación entre las variables seleccionadas: {valor_correlacion}")
         
-        elif var_seleccion == "Discretas":
+        elif var_seleccion_x == "Discretas":
             var_x_disc = st.selectbox("Seleccione la variable independiente X:", discretas)
-            var_y_disc = st.selectbox("Seleccione la variable independiente Y:", discretas)
-            plot_disc=sns.scatterplot(data=dataset, x=dataset[var_x_disc], y=dataset[var_y_disc])
-            plot_disc.set_xlabel(var_x_disc)
-            plot_disc.set_ylabel(var_y_disc)
-            plot_disc.set_title(f"Gráfico de dispersión {var_x_disc} vs {var_y_disc}")
-            st.pyplot(plot_disc.figure, clear_figure=True)
+            # Opción variable Y contínuas
+            if var_seleccion_y == "Contínuas":
+                var_y_disc = st.selectbox("Seleccione la variable independiente Y:", continuas)
+                plot_disc=sns.scatterplot(data=dataset, x=dataset[var_x_disc], y=dataset[var_y_disc])
+                plot_disc.set_xlabel(var_x_disc)
+                plot_disc.set_ylabel(var_y_disc)
+                plot_disc.set_title(f"Gráfico de dispersión {var_x_disc} vs {var_y_disc}")
+                st.pyplot(plot_disc.figure, clear_figure=True)
 
-            # Calcular la correlación entre las variables seleccionadas
-            if var_x_disc == var_y_disc:
-                valor_correlacion = 1
+                # Calcular la correlación entre las variables seleccionadas
+                if var_x_disc == var_y_disc:
+                    valor_correlacion = 1
+                else:
+                    correlacion = dataset[[var_x_disc, var_y_disc]].corr()
+                    valor_correlacion = round(correlacion.loc[var_x_disc, var_y_disc],5)
+
+                # Mostrar la correlación en Streamlit
+                st.write(f"Correlación entre las variables seleccionadas: {valor_correlacion}")
+
             else:
-                correlacion = dataset[[var_x_disc, var_y_disc]].corr()
-                valor_correlacion = round(correlacion.loc[var_x_disc, var_y_disc],5)
+                var_y_disc = st.selectbox("Seleccione la variable independiente Y:", discretas)
+                plot_disc=sns.scatterplot(data=dataset, x=dataset[var_x_disc], y=dataset[var_y_disc])
+                plot_disc.set_xlabel(var_x_disc)
+                plot_disc.set_ylabel(var_y_disc)
+                plot_disc.set_title(f"Gráfico de dispersión {var_x_disc} vs {var_y_disc}")
+                st.pyplot(plot_disc.figure, clear_figure=True)
 
-            # Mostrar la correlación en Streamlit
-            st.write(f"Correlación entre las variables seleccionadas: {valor_correlacion}")
+                # Calcular la correlación entre las variables seleccionadas
+                if var_x_disc == var_y_disc:
+                    valor_correlacion = 1
+                else:
+                    correlacion = dataset[[var_x_disc, var_y_disc]].corr()
+                    valor_correlacion = round(correlacion.loc[var_x_disc, var_y_disc],5)
+
+                # Mostrar la correlación en Streamlit
+                st.write(f"Correlación entre las variables seleccionadas: {valor_correlacion}")
         
-        else:
+        elif var_seleccion_x == "Temporales":
             if fechas == []:
                 var_y_temp = []
             else:    
                 var_x_temp = st.selectbox("Seleccione la variable independiente X:", fechas)
-                var_y_temp = st.selectbox("Seleccione la variable independiente Y:", continuas)
-                plot_temp=sns.lineplot(data=dataset, x=dataset[var_x_temp], y=dataset[var_y_temp])
-                plot_temp.set_xlabel(var_x_temp)
-                plot_temp.set_ylabel(var_y_temp)
-                plot_temp.set_title(f"Gráfico de dispersión {var_x_temp} vs {var_y_temp}")
-                st.pyplot(plot_disc.figure, clear_figure=True)
+                if var_seleccion_y == "Contínuas":
+                    var_y_temp = st.selectbox("Seleccione la variable independiente Y:", continuas)
+                    plot_temp=sns.scatterplot(data=dataset, x=dataset[var_x_temp], y=dataset[var_y_temp])
+                    plot_temp.set_xlabel(var_x_temp)
+                    plot_temp.set_ylabel(var_y_temp)
+                    plot_temp.set_title(f"Gráfico de dispersión {var_x_temp} vs {var_y_temp}")
+                    st.pyplot(plot_temp.figure, clear_figure=True)
 
-                # Calcular la correlación entre las variables seleccionadas
-                if var_x_temp == var_y_temp:
-                    valor_correlacion = 1
+                    # Calcular la correlación entre las variables seleccionadas
+                    if var_x_temp == var_y_temp:
+                        valor_correlacion = 1
+                    else:
+                        correlacion = dataset[[var_x_temp, var_y_temp]].corr()
+                        valor_correlacion = round(correlacion.loc[var_x_temp, var_y_temp],5)
+
+                    # Mostrar la correlación en Streamlit
+                    st.write(f"Correlación entre las variables seleccionadas: {valor_correlacion}")
+
                 else:
-                    correlacion = dataset[[var_x_temp, var_y_temp]].corr()
-                    valor_correlacion = round(correlacion.loc[var_x_temp, var_y_temp],5)
-                # Mostrar la correlación en Streamlit
-                st.write(f"Correlación entre las variables seleccionadas: {valor_correlacion}")
+                    var_y_temp = st.selectbox("Seleccione la variable independiente Y:", discretas)
+                    plot_temp=sns.scatterplot(data=dataset, x=dataset[var_x_temp], y=dataset[var_y_temp])
+                    plot_temp.set_xlabel(var_x_temp)
+                    plot_temp.set_ylabel(var_y_temp)
+                    plot_temp.set_title(f"Gráfico de dispersión {var_x_temp} vs {var_y_temp}")
+                    st.pyplot(plot_temp.figure, clear_figure=True)
 
-            
+                    # Calcular la correlación entre las variables seleccionadas
+                    if var_x_temp == var_y_temp:
+                        valor_correlacion = 1
+                    else:
+                        correlacion = dataset[[var_x_temp, var_y_temp]].corr()
+                        valor_correlacion = round(correlacion.loc[var_x_temp, var_y_temp],5)
+
+                    # Mostrar la correlación en Streamlit
+                    st.write(f"Correlación entre las variables seleccionadas: {valor_correlacion}")
 
 
 
