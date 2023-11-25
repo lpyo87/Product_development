@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/peyo8/OneDrive/LP/Maestr%C3%ADa_BI/08.Trimestre/Product_Development/Lab2/mlruns/619030614662232103/6db782e226df4ae79b47c2690c30e52e/artifacts
+end_time: 1700877351385
+entry_point_name: ''
+experiment_id: '619030614662232103'
+lifecycle_stage: active
+run_id: 6db782e226df4ae79b47c2690c30e52e
+run_name: Extra Trees Regressor
+run_uuid: 6db782e226df4ae79b47c2690c30e52e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1700877350666
+status: 3
+tags: []
+user_id: peyo8

@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/peyo8/OneDrive/LP/Maestr%C3%ADa_BI/08.Trimestre/Product_Development/Lab2/mlruns/619030614662232103/d2bba7d0df1a43d1ba0eb58542e076fc/artifacts
+end_time: 1700875576055
+entry_point_name: ''
+experiment_id: '619030614662232103'
+lifecycle_stage: active
+run_id: d2bba7d0df1a43d1ba0eb58542e076fc
+run_name: Session Initialized 40a3
+run_uuid: d2bba7d0df1a43d1ba0eb58542e076fc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1700875493704
+status: 3
+tags: []
+user_id: peyo8

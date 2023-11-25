@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/peyo8/OneDrive/LP/Maestr%C3%ADa_BI/08.Trimestre/Product_Development/mlops_PR/demo_v1/notebooks/mlruns/270262960941890118/99355f4ec89c47ddaaf2cbf7a7e92c4e/artifacts
+end_time: 1700443418624
+entry_point_name: ''
+experiment_id: '270262960941890118'
+lifecycle_stage: active
+run_id: 99355f4ec89c47ddaaf2cbf7a7e92c4e
+run_name: Elastic Net
+run_uuid: 99355f4ec89c47ddaaf2cbf7a7e92c4e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1700443418505
+status: 3
+tags: []
+user_id: peyo8

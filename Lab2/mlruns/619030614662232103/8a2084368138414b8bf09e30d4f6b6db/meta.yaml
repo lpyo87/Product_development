@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/peyo8/OneDrive/LP/Maestr%C3%ADa_BI/08.Trimestre/Product_Development/Lab2/mlruns/619030614662232103/8a2084368138414b8bf09e30d4f6b6db/artifacts
+end_time: 1700875876109
+entry_point_name: ''
+experiment_id: '619030614662232103'
+lifecycle_stage: active
+run_id: 8a2084368138414b8bf09e30d4f6b6db
+run_name: Decision Tree Regressor
+run_uuid: 8a2084368138414b8bf09e30d4f6b6db
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1700875875940
+status: 3
+tags: []
+user_id: peyo8

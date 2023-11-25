@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/peyo8/OneDrive/LP/Maestr%C3%ADa_BI/08.Trimestre/Product_Development/Lab2/mlruns/619030614662232103/a8571de9457f45b58c5768a3ba023b61/artifacts
+end_time: 1700880360495
+entry_point_name: ''
+experiment_id: '619030614662232103'
+lifecycle_stage: active
+run_id: a8571de9457f45b58c5768a3ba023b61
+run_name: K Neighbors Regressor
+run_uuid: a8571de9457f45b58c5768a3ba023b61
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1700880360361
+status: 3
+tags: []
+user_id: peyo8

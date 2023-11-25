@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/peyo8/OneDrive/LP/Maestr%C3%ADa_BI/08.Trimestre/Product_Development/Lab2/mlruns/619030614662232103/be14108154794335b9557bf5f28c002f/artifacts
+end_time: 1700876157726
+entry_point_name: ''
+experiment_id: '619030614662232103'
+lifecycle_stage: active
+run_id: be14108154794335b9557bf5f28c002f
+run_name: Gradient Boosting Regressor
+run_uuid: be14108154794335b9557bf5f28c002f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1700876157073
+status: 3
+tags: []
+user_id: peyo8

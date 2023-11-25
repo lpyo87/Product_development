@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/peyo8/OneDrive/LP/Maestr%C3%ADa_BI/08.Trimestre/Product_Development/Lab2/mlruns/619030614662232103/f22a49a1a9d74b2b8b6571ae948bdf05/artifacts
+end_time: 1700880357775
+entry_point_name: ''
+experiment_id: '619030614662232103'
+lifecycle_stage: active
+run_id: f22a49a1a9d74b2b8b6571ae948bdf05
+run_name: Passive Aggressive Regressor
+run_uuid: f22a49a1a9d74b2b8b6571ae948bdf05
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1700880357644
+status: 3
+tags: []
+user_id: peyo8

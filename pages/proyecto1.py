@@ -76,8 +76,10 @@ def main():
         # Ciclo para obtener clasificación de varaibles, según los tipos de datos
         for colName in dataset.columns:
 
-            if((dataset[colName].dtype=='datetime64') or (dataset[colName].dtype=='datetime.date') ):
+            if(pd.api.types.is_datetime64_any_dtype(dataset[colName])):
                 fechas.append(colName)
+            #if((dataset[colName].dtype=='datetime64') or (dataset[colName].dtype=='datetime.date') ):
+            #    fechas.append(colName)
 
             elif((dataset[colName].dtype=='object') or (dataset[colName].dtype=='string')):
                 categoricas.append(colName)

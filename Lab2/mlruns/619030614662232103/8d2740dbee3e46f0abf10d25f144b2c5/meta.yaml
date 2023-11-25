@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/peyo8/OneDrive/LP/Maestr%C3%ADa_BI/08.Trimestre/Product_Development/Lab2/mlruns/619030614662232103/8d2740dbee3e46f0abf10d25f144b2c5/artifacts
+end_time: 1700876166365
+entry_point_name: ''
+experiment_id: '619030614662232103'
+lifecycle_stage: active
+run_id: 8d2740dbee3e46f0abf10d25f144b2c5
+run_name: Lasso Regression
+run_uuid: 8d2740dbee3e46f0abf10d25f144b2c5
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1700876166240
+status: 3
+tags: []
+user_id: peyo8
