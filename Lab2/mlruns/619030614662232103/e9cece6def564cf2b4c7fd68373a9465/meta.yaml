@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/peyo8/OneDrive/LP/Maestr%C3%ADa_BI/08.Trimestre/Product_Development/Lab2/mlruns/619030614662232103/e9cece6def564cf2b4c7fd68373a9465/artifacts
+end_time: 1700965914650
+entry_point_name: ''
+experiment_id: '619030614662232103'
+lifecycle_stage: active
+run_id: e9cece6def564cf2b4c7fd68373a9465
+run_name: Random Forest Regressor
+run_uuid: e9cece6def564cf2b4c7fd68373a9465
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1700965914484
+status: 3
+tags: []
+user_id: peyo8

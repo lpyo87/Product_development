@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/peyo8/OneDrive/LP/Maestr%C3%ADa_BI/08.Trimestre/Product_Development/Lab2/mlruns/619030614662232103/d38792998b7b4906ab3554ba888e2174/artifacts
+end_time: 1700965243298
+entry_point_name: ''
+experiment_id: '619030614662232103'
+lifecycle_stage: active
+run_id: d38792998b7b4906ab3554ba888e2174
+run_name: AdaBoost Regressor
+run_uuid: d38792998b7b4906ab3554ba888e2174
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1700965243167
+status: 3
+tags: []
+user_id: peyo8

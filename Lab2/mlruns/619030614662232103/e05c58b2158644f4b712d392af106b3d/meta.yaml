@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/peyo8/OneDrive/LP/Maestr%C3%ADa_BI/08.Trimestre/Product_Development/Lab2/mlruns/619030614662232103/e05c58b2158644f4b712d392af106b3d/artifacts
+end_time: 1701036231514
+entry_point_name: ''
+experiment_id: '619030614662232103'
+lifecycle_stage: active
+run_id: e05c58b2158644f4b712d392af106b3d
+run_name: Lasso Least Angle Regression
+run_uuid: e05c58b2158644f4b712d392af106b3d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1701036231307
+status: 3
+tags: []
+user_id: peyo8

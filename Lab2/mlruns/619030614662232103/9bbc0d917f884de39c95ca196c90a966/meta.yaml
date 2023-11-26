@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/peyo8/OneDrive/LP/Maestr%C3%ADa_BI/08.Trimestre/Product_Development/Lab2/mlruns/619030614662232103/9bbc0d917f884de39c95ca196c90a966/artifacts
+end_time: 1701032703650
+entry_point_name: ''
+experiment_id: '619030614662232103'
+lifecycle_stage: active
+run_id: 9bbc0d917f884de39c95ca196c90a966
+run_name: Bayesian Ridge
+run_uuid: 9bbc0d917f884de39c95ca196c90a966
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1701032703501
+status: 3
+tags: []
+user_id: peyo8

@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/peyo8/OneDrive/LP/Maestr%C3%ADa_BI/08.Trimestre/Product_Development/Lab2/mlruns/619030614662232103/27deabe9a8af438dabf8f86de8531652/artifacts
+end_time: 1700965248016
+entry_point_name: ''
+experiment_id: '619030614662232103'
+lifecycle_stage: active
+run_id: 27deabe9a8af438dabf8f86de8531652
+run_name: Dummy Regressor
+run_uuid: 27deabe9a8af438dabf8f86de8531652
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1700965247864
+status: 3
+tags: []
+user_id: peyo8

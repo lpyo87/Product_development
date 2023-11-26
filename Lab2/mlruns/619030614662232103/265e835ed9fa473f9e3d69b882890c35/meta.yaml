@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/peyo8/OneDrive/LP/Maestr%C3%ADa_BI/08.Trimestre/Product_Development/Lab2/mlruns/619030614662232103/265e835ed9fa473f9e3d69b882890c35/artifacts
+end_time: 1701032946145
+entry_point_name: ''
+experiment_id: '619030614662232103'
+lifecycle_stage: active
+run_id: 265e835ed9fa473f9e3d69b882890c35
+run_name: Light Gradient Boosting Machine
+run_uuid: 265e835ed9fa473f9e3d69b882890c35
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1701032945574
+status: 3
+tags: []
+user_id: peyo8

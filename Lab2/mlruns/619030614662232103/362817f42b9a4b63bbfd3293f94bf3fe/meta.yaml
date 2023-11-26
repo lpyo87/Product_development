@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/peyo8/OneDrive/LP/Maestr%C3%ADa_BI/08.Trimestre/Product_Development/Lab2/mlruns/619030614662232103/362817f42b9a4b63bbfd3293f94bf3fe/artifacts
+end_time: 1701036232269
+entry_point_name: ''
+experiment_id: '619030614662232103'
+lifecycle_stage: active
+run_id: 362817f42b9a4b63bbfd3293f94bf3fe
+run_name: Orthogonal Matching Pursuit
+run_uuid: 362817f42b9a4b63bbfd3293f94bf3fe
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1701036232080
+status: 3
+tags: []
+user_id: peyo8

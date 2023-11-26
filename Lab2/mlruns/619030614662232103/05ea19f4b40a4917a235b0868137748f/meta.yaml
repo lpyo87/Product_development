@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/peyo8/OneDrive/LP/Maestr%C3%ADa_BI/08.Trimestre/Product_Development/Lab2/mlruns/619030614662232103/05ea19f4b40a4917a235b0868137748f/artifacts
+end_time: 1701032703966
+entry_point_name: ''
+experiment_id: '619030614662232103'
+lifecycle_stage: active
+run_id: 05ea19f4b40a4917a235b0868137748f
+run_name: Ridge Regression
+run_uuid: 05ea19f4b40a4917a235b0868137748f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1701032703819
+status: 3
+tags: []
+user_id: peyo8

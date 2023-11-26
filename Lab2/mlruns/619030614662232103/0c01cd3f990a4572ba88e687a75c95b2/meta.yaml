@@ -1,0 +1,15 @@
+artifact_uri: file:///c:/Users/peyo8/OneDrive/LP/Maestr%C3%ADa_BI/08.Trimestre/Product_Development/Lab2/mlruns/619030614662232103/0c01cd3f990a4572ba88e687a75c95b2/artifacts
+end_time: 1700952679189
+entry_point_name: ''
+experiment_id: '619030614662232103'
+lifecycle_stage: active
+run_id: 0c01cd3f990a4572ba88e687a75c95b2
+run_name: Huber Regressor
+run_uuid: 0c01cd3f990a4572ba88e687a75c95b2
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1700952679074
+status: 3
+tags: []
+user_id: peyo8
